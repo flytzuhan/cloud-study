@@ -1,0 +1,13 @@
+server:
+  port: 8855
+  servlet:
+      context-path: /provider
+spring:
+  application:
+    name: study-provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

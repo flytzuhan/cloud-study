@@ -1,0 +1,18 @@
+server:
+  port: 9800
+spring:
+  application:
+    name: mall-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: study-provider
+          uri: lb://study-provider
+          predicates:
+            - Path=/provider/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
