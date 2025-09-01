@@ -5,6 +5,29 @@ server:
 spring:
   application:
     name: study-provider
+  redis:
+    cluster:
+      nodes:
+        - localhost:7000
+        - localhost:7001
+        - localhost:7002
+        - localhost:7003
+        - localhost:7004
+        - localhost:7005
+    timeout: 2000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
 eureka:
   client:
     service-url:
