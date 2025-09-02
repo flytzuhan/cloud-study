@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@DubboService(version = "1.2.0", timeout = 5000)
+@DubboService(version = "1.2.0", timeout = 5000, group = "provider-group")
 @Component
 public class UserInfoDubboApiImpl implements UserInfoDubboApi {
 

@@ -10,6 +10,10 @@ spring:
           uri: lb://study-provider
           predicates:
             - Path=/provider/**
+        - id: dubbo-client
+          uri: lb://dubbo-client
+          predicates:
+              - Path=/dubbo-client/**
 eureka:
   client:
     service-url:

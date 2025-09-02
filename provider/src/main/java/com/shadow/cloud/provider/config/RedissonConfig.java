@@ -13,7 +13,7 @@ import java.util.List;
 @Configuration
 public class RedissonConfig {
 
-    @Value("${spring.redis.cluster.nodes}")
+    @Value("${spring.redis.cluster.nodes:127.0.0.1:7000,127.0.0.1:7001,127.0.0.1:7002}")
     private List<String> clusterNodes;
 
     @Bean
